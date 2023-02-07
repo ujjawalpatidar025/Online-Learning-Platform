@@ -4,6 +4,7 @@ import image from '../Images/svg.png'
 import React from 'react'
 
 import './Homepage.css'
+import { Link } from 'react-router-dom'
 
 const Homepage = () => {
   return (
@@ -25,9 +26,9 @@ const Homepage = () => {
         <Typography variant='h6' component='div' style={{ width: '450px', letterSpacing:'3px', fontWeight: 'bolder', textAlign: 'center', position: 'absolute', right: '80px', top: '170px' ,fontWeight:'bolder'}}>Start, switch, or advance your career with courses, Professional Certificates, and degrees from world-class universities and companies.</Typography>
 
         <Box style={{ width: '450px', fontWeight: 'bolder', fontFamily: 'sans-serif', textAlign: 'center', position: 'absolute', right: '80px', top: '370px' }}>
-          <Button size='large' variant="contained" color='primary' style={{ textTransform: 'capitalize', width: '200px', margin: 'auto 10px' }}> Sign In</Button>
+          <Button size='large' variant="contained" color='primary' style={{ textTransform: 'capitalize', width: '200px', margin: 'auto 10px' }}><Link to={'/Login'} style={{textDecoration:"none", color:"inherit"}}>Sign In</Link> </Button>
 
-          <Button size='large' variant="outlined" color='primary' style={{ textTransform: 'capitalize', width: '200px', fontWeight: 'bold', }}> Sign up </Button>
+          <Button size='large' variant="outlined" color='primary' style={{ textTransform: 'capitalize', width: '200px', fontWeight: 'bold', }}> <Link to={'/register'} style={{textDecoration:"none", color:"inherit"}}>Sign up</Link> </Button>
 
 
 

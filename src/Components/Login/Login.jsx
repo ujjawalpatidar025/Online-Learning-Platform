@@ -9,21 +9,24 @@ const Login = () => {
   const [Ucheck, setUcheck] = useState(false);
   const [Pcheck, setPcheck] = useState(false);
 
-
+  const handleSubmit =()=>{
+    setUcheck(true);
+    setPcheck(true);
+  }
 
 
 
   return (
     <Container
       maxWidth={1}
-      style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}
+      style={{ display: 'flex',minHeight: "100vh", maxHeight: "max-content",  flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}
     >
       <Box
         boxShadow={3}
         bgcolor="background.paper"
         m={0}
         p={0}
-        style={{ width: '25%', margin: '60px auto', backgroundColor: 'white', height: 'auto', borderRadius: '10px', boxShadow: '0px 7px 8px -4px rgb(0 0 0 / 20%), 0px 12px 17px 2px rgb(0 0 0 / 14%), 0px 5px 22px 4px rgb(0 0 0 / 12%)' }}
+        style={{ width: 'max-content', margin: '60px auto', backgroundColor: 'white', height: 'auto', borderRadius: '10px', boxShadow: '0px 7px 8px -4px rgb(0 0 0 / 20%), 0px 12px 17px 2px rgb(0 0 0 / 14%), 0px 5px 22px 4px rgb(0 0 0 / 12%)' }}
       >
 
         <Box
@@ -51,7 +54,7 @@ const Login = () => {
             label='username'
             onChange={(e) => {
               setUsername(e.target.value);
-              setUcheck(true);
+              // setUcheck(true);
 
             }}
             style={{ margin: '10px', width: '20rem' }}
@@ -67,7 +70,7 @@ const Login = () => {
             label='password'
             onChange={(e) => {
               setPassword(e.target.value);
-              setPcheck(true);
+              // setPcheck(true);
             }}
             sx={{
               '&:hover': {
@@ -84,6 +87,7 @@ const Login = () => {
             variant="contained"
             color='primary'
             style={{ margin: '20px', width: '20rem' }}
+            onClick={handleSubmit}
           >Submit</Button>
 
           <FormHelperText>If you are not registered yet</FormHelperText>
