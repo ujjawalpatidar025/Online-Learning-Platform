@@ -4,15 +4,13 @@ import image from '../Images/bg.svg'
 import i1 from '../Images/1.png'
 import i2 from '../Images/2.png'
 import i3 from '../Images/3.png'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import React from 'react'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
-import './Homepage.css'
-import { Link } from 'react-router-dom'
 
 
 const Homepage = () => {
@@ -96,9 +94,9 @@ const Homepage = () => {
         <Paper  style={{height:'70vh',borderRadius:'0px 30px 30px 0',width:'50vw'}} elevation='4'>
       <Typography style={{ width:'600px', fontSize:'2.1rem',fontWeight:'bolder',fontFamily:'serif',margin:'50px' }}>“eLearning doesn't just "happen"! It requires careful planning and implementation.”</Typography>
       <Typography style={{ width:'600px', fontSize:'1rem',fontWeight:'bolder',fontFamily:'serif',margin:'50px' }}>Start, switch, or advance your career with courses, Professional Certificates, and degrees from world-class universities and companies.</Typography>
-      <Button size='large' variant="contained" color='primary' style={{ textTransform: 'capitalize', width: '200px', margin: 'auto 10px' }}> Sign In</Button>
+      <Button size='large' variant="contained" color='primary' style={{ textTransform: 'capitalize', width: '200px', margin: 'auto 10px' }}><Link to={"/login"}>Sign In</Link></Button>
 
-          <Button size='large' variant="outlined" color='primary' style={{ textTransform: 'capitalize', width: '200px', fontWeight: 'bold', }}> Sign up </Button>
+          <Button size='large' variant="outlined" color='primary' style={{ textTransform: 'capitalize', width: '200px', fontWeight: 'bold', }}><Link to={"/register"}>Sign Up</Link> </Button>
       </Paper>
      
 
