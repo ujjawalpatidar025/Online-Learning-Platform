@@ -94,9 +94,9 @@ const Homepage = () => {
         <Paper  style={{height:'70vh',borderRadius:'0px 30px 30px 0',width:'50vw'}} elevation='4'>
       <Typography style={{ width:'600px', fontSize:'2.1rem',fontWeight:'bolder',fontFamily:'serif',margin:'50px' }}>“eLearning doesn't just "happen"! It requires careful planning and implementation.”</Typography>
       <Typography style={{ width:'600px', fontSize:'1rem',fontWeight:'bolder',fontFamily:'serif',margin:'50px' }}>Start, switch, or advance your career with courses, Professional Certificates, and degrees from world-class universities and companies.</Typography>
-      <Button size='large' variant="contained" color='primary' style={{ textTransform: 'capitalize', width: '200px', margin: 'auto 10px' }}><Link to={"/login"}>Sign In</Link></Button>
+      <Button size='large' variant="contained" color='primary' style={{ textTransform: 'capitalize', width: '200px', margin: 'auto 10px' }}><Link to={"/login"}  style={{textDecoration:"none", color:"white"}}>Sign In</Link></Button>
 
-          <Button size='large' variant="outlined" color='primary' style={{ textTransform: 'capitalize', width: '200px', fontWeight: 'bold', }}><Link to={"/register"}>Sign Up</Link> </Button>
+          <Button size='large' variant="outlined" color='primary' style={{ textTransform: 'capitalize', width: '200px', fontWeight: 'bold', }}><Link to={"/register"}  style={{textDecoration:"none", color:"#3f51b5"}}>Sign Up</Link> </Button>
       </Paper>
      
 
