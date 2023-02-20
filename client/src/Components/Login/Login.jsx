@@ -1,17 +1,34 @@
 import React from 'react'
 import { useState } from 'react';
+import axios from 'axios';
 import { Container, Box, Typography, Avatar, TextField, FormControl, Button, FormHelperText } from '@material-ui/core';
 
 
 const Login = () => {
-  const [Username, setUsername] = useState("");
-  const [Password, setPassword] = useState("");
+
   const [Ucheck, setUcheck] = useState(false);
   const [Pcheck, setPcheck] = useState(false);
 
-  const handleSubmit =()=>{
+  const [loginData, setLoginData]=useState({
+    username:"",
+    password:""
+  });
+
+  const onChangeData=(e)=>{
+     setLoginData({...loginData, [e.target.name]:e.target.value})
+  }
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
     setUcheck(true);
     setPcheck(true);
+    try{
+       const username=loginData.username;
+       const password=loginData.password;
+       const user=await axios.post("http://localhost:4000/signin/", {username, password});
+       console.log(user.data);
+    }catch(err){
+       console.log("not fatched");
+    }
   }
 
 
@@ -50,28 +67,23 @@ const Login = () => {
           <TextField
             variant='outlined'
             color='primary'
-            value={Username}
+            value={loginData.username}
             label='username'
-            onChange={(e) => {
-              setUsername(e.target.value);
-              // setUcheck(true);
-
-            }}
+            name='username'
+            onChange={onChangeData}
             style={{ margin: '10px', width: '20rem' }}
-            error={(!Username && Ucheck)}
-            helperText={(!Username && Ucheck) ? '*required' : false}
+            error={(!loginData.username && Ucheck)}
+            helperText={(!loginData.username && Ucheck) ? '*required' : false}
             required
 
           />
           <TextField
             variant='outlined'
             color='primary'
-            value={Password}
+            value={loginData.password}
             label='password'
-            onChange={(e) => {
-              setPassword(e.target.value);
-              // setPcheck(true);
-            }}
+            name='password'
+            onChange={onChangeData}
             sx={{
               '&:hover': {
                 outline: 'none'
@@ -79,8 +91,8 @@ const Login = () => {
             }}
             type='password'
             style={{ margin: '10px', width: '20rem' }}
-            error={(!Password && Pcheck)}
-            helperText={(!Password && Pcheck) ? '*required' : 'Do not share your Password with anyone'}
+            error={(!loginData.password && Pcheck)}
+            helperText={(!loginData.password && Pcheck) ? '*required' : 'Do not share your Password with anyone'}
             required
           />
           <Button

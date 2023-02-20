@@ -54,7 +54,7 @@ const Navbar = () => {
 
                     </Typography>
                     <Typography component='span' style={{ margin: 'auto 1px' }}>
-                        <Button size='large' style={{ color: 'white', textTransform: 'capitalize' }}><Link to='/courses' style={{textDecoration:"none", color:"white"}}>Courses</Link></Button>
+                        <Button size='large' style={{ color: 'white', textTransform: 'capitalize' }}><Link to='/courses' style={{textDecoration:"none", color:"inherit"}}>Courses</Link></Button>
 
                     </Typography>
                     <Typography component='span' style={{ margin: 'auto 1px' }}>
