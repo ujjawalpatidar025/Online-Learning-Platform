@@ -2,10 +2,13 @@ import React from 'react'
 import { useState } from 'react';
 import axios from 'axios';
 import { Container, Box, Typography, Avatar, TextField, FormControl, Button, FormHelperText } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { isloading, isLoginError, isLoginSuccess } from '../../Redux/Slices/userSlice';
 
 
 const Login = () => {
 
+  const dispatch=useDispatch();
   const [Ucheck, setUcheck] = useState(false);
   const [Pcheck, setPcheck] = useState(false);
 
@@ -21,13 +24,19 @@ const Login = () => {
     e.preventDefault();
     setUcheck(true);
     setPcheck(true);
+    dispatch(isloading());
     try{
        const username=loginData.username;
        const password=loginData.password;
        const user=await axios.post("http://localhost:4000/signin/", {username, password});
-       console.log(user.data);
+       if(!user) console.log("user not registered yet!");
+       else{
+        dispatch(isLoginSuccess(user.data));
+        console.log(user.data);
+       }
     }catch(err){
-       console.log("not fatched");
+       dispatch(isLoginError());
+       console.log(err);
     }
   }
 
