@@ -10,6 +10,7 @@ import { shadows } from '@material-ui/system';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import { Avatar } from '@material-ui/core';
 import { Box, Menu, MenuItem } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [checkLogin, setcheckLogin] = useState(true)
@@ -53,7 +54,7 @@ const Navbar = () => {
 
                     </Typography>
                     <Typography component='span' style={{ margin: 'auto 1px' }}>
-                        <Button size='large' style={{ color: 'white', textTransform: 'capitalize' }}> Courses</Button>
+                        <Button size='large' style={{ color: 'white', textTransform: 'capitalize' }}><Link to='/courses' style={{textDecoration:"none", color:"inherit"}}>Courses</Link></Button>
 
                     </Typography>
                     <Typography component='span' style={{ margin: 'auto 1px' }}>

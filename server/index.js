@@ -5,9 +5,12 @@ import signInRoute from "./routes/authentication/signin.js";
 import signUpRoute from "./routes/authentication/signup.js";
 import googleRoute from "./routes/authentication/googleauth.js";
 import cookieParser from "cookie-parser";
+import cors from 'cors';
 
 const app=express();
 dotenv.config();
+app.use(cors());
+app.use(express.urlencoded({ extended: false }));
 
 
 const MONGO_URL=process.env.MONGO_URL;
@@ -31,9 +34,9 @@ const connection = ()=>{
 //Routes for app
 app.use(cookieParser());
 app.use(express.json()); 
-app.use("/api/signin", signInRoute);
-app.use("/api/signup", signUpRoute);
-app.use("/api/google", googleRoute);
+app.use("/signin", signInRoute);
+app.use("/signup", signUpRoute);
+app.use("/googleAuth", googleRoute);
 
 
 //middleware for handling error

@@ -10,6 +10,8 @@ import { Home } from '@material-ui/icons';
 import Homepage from './Home/Homepage';
 
 import './App.css'
+// import VideoMediaCard from './Components/Cards/Card';
+import Cards from './Components/Cards/Cards';
 
 
 
@@ -28,6 +30,7 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path='/register' element={<Register />} />
           <Route exact path='/' element={<Homepage />} />
+          <Route exact path='/courses' element={<Cards />} />
 
         </Routes>
         </Container>
